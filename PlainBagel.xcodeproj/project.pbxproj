@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4568A65A201422F5002E248C /* DefaultsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4568A659201422F5002E248C /* DefaultsType.swift */; };
 		45DC9DE4201412250036C7C2 /* PlainBagel.h in Headers */ = {isa = PBXBuildFile; fileRef = 45DC9DE2201412250036C7C2 /* PlainBagel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4568A659201422F5002E248C /* DefaultsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsType.swift; sourceTree = "<group>"; };
 		45DC9DDF201412250036C7C2 /* PlainBagel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlainBagel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DC9DE2201412250036C7C2 /* PlainBagel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlainBagel.h; sourceTree = "<group>"; };
 		45DC9DE3201412250036C7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			children = (
 				45DC9DE2201412250036C7C2 /* PlainBagel.h */,
 				45DC9DE3201412250036C7C2 /* Info.plist */,
+				4568A659201422F5002E248C /* DefaultsType.swift */,
 			);
 			path = PlainBagel;
 			sourceTree = "<group>";
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					45DC9DDE201412250036C7C2 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4568A65A201422F5002E248C /* DefaultsType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +257,7 @@
 		45DC9DE8201412250036C7C2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -266,6 +272,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.1percenter.PlainBagel;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -273,6 +280,7 @@
 		45DC9DE9201412250036C7C2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
