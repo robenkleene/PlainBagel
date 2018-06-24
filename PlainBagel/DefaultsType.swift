@@ -15,7 +15,7 @@ import Foundation
     func removeObject(forKey defaultName: String)
     func string(forKey defaultName: String) -> String?
     func array(forKey defaultName: String) -> [Any]?
-    func dictionary(forKey defaultName: String) -> [String : Any]?
+    func dictionary(forKey defaultName: String) -> [String: Any]?
     func data(forKey defaultName: String) -> Data?
     func stringArray(forKey defaultName: String) -> [String]?
     func integer(forKey defaultName: String) -> Int
@@ -41,5 +41,5 @@ import Foundation
     @objc(setURL:forKey:)
     func set(_ url: URL?, forKey defaultName: String)
 
-    func dictionaryRepresentation() -> [String : Any]
+    func dictionaryRepresentation() -> [String: Any]
 }
