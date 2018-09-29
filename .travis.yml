@@ -1,3 +1,25 @@
 language: swift
 osx_image: xcode10
 script: make ci
+xcode_project: PlainBagel
+xcode_scheme: PlainBagel
+env:
+  global:
+  - FRAMEWORK_NAME=PlainBagel
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_script:
+- make lint
+before_deploy:
+- carthage build --no-skip-current
+- carthage archive $FRAMEWORK_NAME
+deploy:
+  provider: releases
+  api_key:
+    secure: mTMd7mGPuanlady7o1Wo5zyuSraUo8whk/kn3gvjojF0xoel2H8dSRrVMnvM890ZGRk6pv3O5WPUKlcy1YAzHLEgKSX3fwnKd8as/bHQ7b4BNqXO4/OyA+FbMp9d7L4hvYeyRANjLei1jw+ZiX12G/vWpLaFYDqSyuPrg+lK8MoFgkIn92IiIRhW5KoaL5YNNZ9ouFaYjcd4eE8NdD4uf0RnqEM1w5ThclIJsN5gHLYTWjTH0ethxNZ/3BKy9GEBfU0dyKziyTo4hRf3OKrmL+dXzFGhE3VZQ5U5INZRQM8qR11ENFcpEGWHCGNSoXNo+8vIXSLZ/jOdAlKVyo9k2QqAUfdkHTjjhQK4MshFIupFcydXnLH0+rcyoQuQZIw1CGOzFw2db0vpRyv/j9eqSQUJHudn3X9n/SuiT5DMUE0EITHfA6ZKJ86mD1bvv6h/APfWEKPH8IFo72Jo40uzj77jKcMJSNFrrcO2tceDy5vRmnTfehy3qrjBxmRk0jVmiBiRAJV3ABA20lgQBBn0/o9+xebQwb6D4TWRG1uLWm3wxeev8WDWGTqC2Zo2DEqRufvN8/hTF52QeU1oGcCKC1jDTX25esNF61FTk0Rgu5pxn7mOOj+c5Q6qD+ujEYaz7idITR1Wqs0Ox8+QQaC4bw3p1zgB9cJe/EkXd/WKBRg=
+  file: PlainBagel.framework.zip
+  skip_cleanup: true
+  on:
+    repo: robenkleene/PlainBagel
+    tags: true
