@@ -13,6 +13,7 @@ import Foundation
     func set(_ value: Any?, forKey defaultName: String)
 
     func removeObject(forKey defaultName: String)
+    func object(forKey defaultName: String) -> Any?
     func string(forKey defaultName: String) -> String?
     func array(forKey defaultName: String) -> [Any]?
     func dictionary(forKey defaultName: String) -> [String: Any]?
