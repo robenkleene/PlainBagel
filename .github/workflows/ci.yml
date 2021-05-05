@@ -17,7 +17,6 @@ jobs:
           nickname: repla-bot
           message: |-
             CI started ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
-      - run: carthage bootstrap
       - run: make ci
       - name: IRC notification
         uses: Gottox/irc-message-action@v1
