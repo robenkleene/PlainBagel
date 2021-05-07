@@ -1,0 +1,27 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: IRC notification
+        uses: Gottox/irc-message-action@v1
+        with:
+          channel: '#repla-development'
+          nickname: ${{ github.event.repository.name }}-bot
+          message: |-
+            CI started for ${{ github.event.repository.name }}, ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
+      - run: make ci
+      - name: IRC notification
+        uses: Gottox/irc-message-action@v1
+        with:
+          channel: '#repla-development'
+          nickname: ${{ github.event.repository.name }}-bot
+          message: |-
+            CI finished for ${{ github.event.repository.name }}, ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}

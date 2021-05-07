@@ -1,0 +1,32 @@
+name: Release
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: IRC notification
+        uses: Gottox/irc-message-action@v1
+        with:
+          channel: '#repla-development'
+          nickname: ${{ github.event.repository.name }}-bot
+          message: |-
+            Release started for ${{ github.event.repository.name }}, ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
+      - run: make archive
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: PlainBagel.framework.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: IRC notification
+        uses: Gottox/irc-message-action@v1
+        with:
+          channel: '#repla-development'
+          nickname: ${{ github.event.repository.name }}-bot
+          message: |-
+            Release finished for ${{ github.event.repository.name }}, ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}

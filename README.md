@@ -1,1 +1,1 @@
-# `PlainBagel` [![Build Status](https://travis-ci.org/robenkleene/PlainBagel.svg?branch=master)](https://travis-ci.org/robenkleene/PlainBagel)
+# `PlainBagel` ![Status](https://github.com/robenkleene/plainbagel/actions/workflows/ci.yml/badge.svg)
