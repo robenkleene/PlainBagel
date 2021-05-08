@@ -15,7 +15,7 @@ jobs:
           channel: '#repla-development'
           nickname: bot-${{ github.event.repository.name }}
           message: |-
-            ${{ github.event.repository.name }} ${{ github.action }} started ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
+            ${{ github.event.repository.name }} ${{ github.job }} started ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
       - run: make archive
       - name: Release
         uses: softprops/action-gh-release@v1
@@ -29,4 +29,4 @@ jobs:
           channel: '#repla-development'
           nickname: bot-${{ github.event.repository.name }}-bot
           message: |-
-            ${{ github.event.repository.name }} ${{ github.action }} finished ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
+            ${{ github.event.repository.name }} ${{ github.job }} finished ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
