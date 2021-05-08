@@ -14,7 +14,7 @@ jobs:
         uses: Gottox/irc-message-action@v1
         with:
           channel: '#repla-development'
-          nickname: ${{ github.run_id }}-bot
+          nickname: bot-${{ github.run_id }}
           message: |-
             ${{ github.event.repository.name }} ${{ github.action }} started ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
       - run: make ci
@@ -22,6 +22,6 @@ jobs:
         uses: Gottox/irc-message-action@v1
         with:
           channel: '#repla-development'
-          nickname: ${{ github.run_id }}-bot
+          nickname: bot-${{ github.run_id }}
           message: |-
             ${{ github.event.repository.name }} ${{ github.action }} finished ${{ github.actor }} pushed ${{ github.event.ref }} ${{ github.event.compare }}
