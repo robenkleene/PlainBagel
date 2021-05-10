@@ -1,6 +1,6 @@
 SCHEME = PlainBagel
 
-.PHONY: build test lint autocorrect swiftformat swiftlint_autocorrect bootstrap loc archive
+.PHONY: build test lint autocorrect swiftformat swiftlint_autocorrect loc archive
 
 ci: build
 ac: autocorrect
@@ -23,9 +23,6 @@ build:
 archive:
 	carthage build --no-skip-current
 	carthage archive PlainBagel
-
-bootstrap:
-	carthage bootstrap
 
 test:
 	xcodebuild test \
